@@ -1,0 +1,64 @@
+[project]
+name = "registration-library"
+version = "0.0.1"
+authors = [
+    {name = "Mario Winkler", email="mario.winkler@dlr.de"},
+    {name = "Jonas Eberle", email="jonas.eberle@dlr.de"}    
+]
+description = "Common Library of the Resource Registration Building Block to harvest and register resources"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pystac",
+    "pystac_client",
+    "stactools_sentinel2",
+    "rio-cogeo",
+    "requests",
+    "psycopg2-binary",
+    "pika"
+]
+license = {file = "LICENSE"}
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "flake8"
+]
+test = [
+    "pytest"
+]
+docs = [
+    "mkdocs"
+]
+
+[project.urls]
+Homepage = "https://github.com/EOEPCA/registration-library"
+Issues = "https://github.com/EOEPCA/registration-library/issues"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-q --import-mode=importlib --no-header -rfE --disable-warnings --log-level=INFO"
+testpaths = [
+    "tests",
+    "integration",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/registration-library"]
+
+
+[tool.black]
+line-length = 120
+target-version = ["py38"]
