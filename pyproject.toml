@@ -58,6 +58,8 @@ allow-direct-references = true
 [tool.hatch.build.targets.wheel]
 packages = ["src/registration-library"]
 
+[tool.flake8]
+max-line-length = 110
 
 [tool.black]
 line-length = 120
