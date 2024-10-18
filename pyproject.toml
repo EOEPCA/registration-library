@@ -46,10 +46,14 @@ Issues = "https://github.com/EOEPCA/registration-library/issues"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
-addopts = "-q --import-mode=importlib --no-header -rfE --disable-warnings --log-level=INFO"
-testpaths = [
-    "test",
-    "integration",
+pythonpath = "src"
+addopts = [
+    "-q",
+    "--import-mode=importlib",
+    "--no-header",
+    "-rfE",
+    "--disable-warnings",
+    "--log-level=INFO"
 ]
 
 [tool.black]
