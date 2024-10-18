@@ -4,8 +4,7 @@ from unittest import mock
 import pytest
 
 import requests
-from lib.base.download import access_token
-
+from registration_library.base.download import access_token
 
 # Test if the function returns the existing token if it is not expired
 def test_access_token_existing_valid_token(monkeypatch):

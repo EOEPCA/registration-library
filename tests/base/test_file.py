@@ -7,7 +7,7 @@ from unittest import mock
 
 import pytest
 import zipfile
-from lib.base.file import (
+from registration_library.base.file import (
     zip_directory,
     delete_file,
     unzip_file,
