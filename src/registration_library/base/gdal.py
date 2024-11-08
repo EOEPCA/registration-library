@@ -33,8 +33,7 @@ def has_georeference(source: str) -> bool:
     try:
         source_ds = rio_open(source)
         log.debug(
-            f"Checking: {source}\n  crs: {source_ds.crs}\n  "
-            f"gcps: {source_ds.crs}\n  transform: {source_ds.crs}"
+            f"Checking: {source}\n  crs: {source_ds.crs}\n  " f"gcps: {source_ds.crs}\n  transform: {source_ds.crs}"
         )
 
         if source_ds is not None:
@@ -190,9 +189,7 @@ def translate(
         )
         log.info(f">> gdal_translate {translate_options} {source} {translate_output}")
 
-        translate_ds = gdal.Translate(
-            translate_output, source_ds, options=translate_options.replace("-alpha", "")
-        )
+        translate_ds = gdal.Translate(translate_output, source_ds, options=translate_options.replace("-alpha", ""))
 
         if color_table:
             if isfile(color_table) and access(color_table, R_OK):

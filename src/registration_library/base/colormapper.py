@@ -9,7 +9,7 @@ log = logging.getLogger("oseostac")
 
 
 def hex_to_rgb(hexa):
-    return tuple(int(hexa[i: i + 2], 16) for i in (0, 2, 4))
+    return tuple(int(hexa[i : i + 2], 16) for i in (0, 2, 4))
 
 
 def rgb_to_hex(r, g, b):
@@ -389,9 +389,7 @@ class ColorMap(object):
         sld += f'                 <ColorMap type="{color_map_type}" extended="{extended}">\n'
 
         for entry in self.entries:
-            sld += (
-                f'                     <ColorMapEntry color="{entry.color_as_hex()}" quantity="{entry.value}"'
-            )
+            sld += f'                     <ColorMapEntry color="{entry.color_as_hex()}" quantity="{entry.value}"'
             if entry.opacity or with_opacity:
                 if entry.opacity:
                     sld += f' opacity="{entry.opacity}"'
@@ -422,9 +420,7 @@ class ColorMap(object):
         else:
             return sld
 
-    def to_cpt(
-        self, title: str = "Default Title", description: str = "Default Description", output_file: str = None
-    ):
+    def to_cpt(self, title: str = "Default Title", description: str = "Default Description", output_file: str = None):
         cpt = ""
 
         if title:
