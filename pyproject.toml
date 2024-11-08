@@ -25,7 +25,14 @@ dependencies = [
     "rio-cogeo",
     "requests",
     "psycopg2-binary",
-    "pika"
+    "pika",
+    "pypgstac",
+    "pandas",
+    "pyarrow",
+    "duckdb",
+    "GDAL",
+    "webcolors",
+    "bs4"
 ]
 
 [project.optional-dependencies]
