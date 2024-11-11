@@ -30,7 +30,7 @@ dependencies = [
     "pandas",
     "pyarrow",
     "duckdb",
-    "GDAL",
+    "GDAL>=3.8.5",
     "webcolors",
     "bs4"
 ]
