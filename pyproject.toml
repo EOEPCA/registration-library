@@ -29,10 +29,7 @@ dependencies = [
     "pypgstac",
     "pandas",
     "pyarrow",
-    "duckdb",
-    "GDAL>=3.8.5",
-    "webcolors",
-    "bs4"
+    "duckdb"
 ]
 
 [project.optional-dependencies]
@@ -45,6 +42,11 @@ test = [
 ]
 docs = [
     "mkdocs"
+]
+oeso = [
+    "GDAL>=3.8.5",
+    "webcolors",
+    "bs4"
 ]
 
 [project.urls]
