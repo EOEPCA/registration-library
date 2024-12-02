@@ -25,28 +25,25 @@ dependencies = [
     "rio-cogeo",
     "requests",
     "psycopg2-binary",
-    "pika",
-    "pypgstac",
-    "pandas",
-    "pyarrow",
-    "duckdb"
+    "pypgstac"
 ]
 
 [project.optional-dependencies]
 dev = [
     "black",
-    "flake8"
-]
-test = [
-    "pytest"
-]
-docs = [
+    "flake8",
+    "pytest",
     "mkdocs"
 ]
-oeso = [
+oseo = [
     "GDAL>=3.8.5",
     "webcolors",
     "bs4"
+]
+geoparquet = [
+    "pandas",
+    "pyarrow",
+    "duckdb"
 ]
 
 [project.urls]
