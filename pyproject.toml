@@ -23,9 +23,7 @@ dependencies = [
     "pystac_client",
     "stactools_sentinel2",
     "rio-cogeo",
-    "requests",
-    "psycopg2-binary",
-    "pypgstac"
+    "requests"
 ]
 
 [project.optional-dependencies]
@@ -34,6 +32,10 @@ dev = [
     "flake8",
     "pytest",
     "mkdocs"
+]
+db = [
+    "psycopg2-binary",
+    "pypgstac"
 ]
 oseo = [
     "GDAL>=3.8.5",
