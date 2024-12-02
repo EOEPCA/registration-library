@@ -16,7 +16,7 @@ jobs:
         python -m pip install --upgrade pip flake8 black pytest requests
     - name: Analysing the code with flake8
       run: |
-        flake8 --max-line-length 120 --count --statistics src/
+        flake8 --max-line-length 120 --count --statistics --ignore E203 src/
     - name: Check code format with black
       run: |
         black --check --diff --color src/
