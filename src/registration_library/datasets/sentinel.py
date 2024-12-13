@@ -311,9 +311,9 @@ def sentinel_metadata(scene_path, scene_id, return_pystac=False, add_file_size=F
     stac_function = None
     stac_function_args = {}
     if scene_id.startswith("S1") and "_GRD" in scene_id:
-        stac_function = "stactools.sentinel1.stac.create_item"
+        stac_function = "stactools.sentinel1.grd.stac.create_item"
     elif scene_id.startswith("S1") and "_SLC" in scene_id:
-        stac_function = "stactools.sentinel1.stac.create_item"
+        stac_function = "stactools.sentinel1.slc.stac.create_item"
     elif scene_id.startswith("S2"):
         stac_function = "stactools.sentinel2.stac.create_item"
     elif scene_id.startswith("S3"):
