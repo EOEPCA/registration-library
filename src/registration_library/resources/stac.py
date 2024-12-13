@@ -128,6 +128,7 @@ def register_metadata(
     api_pw,
     inventory_dsn,
     file_deletion=False,
+    verifiy=True,
 ):
     """
     Description...
@@ -174,7 +175,7 @@ def register_metadata(
         # Conduct request to STAC API
         api_action = "insert"
         r = requests.post(
-            "%s/collections/%s/items" % (api_url, stac.collection_id), json=stac.to_dict(), auth=(api_user, api_pw)
+            "%s/collections/%s/items" % (api_url, stac.collection_id), json=stac.to_dict(), auth=(api_user, api_pw), verifiy=verifiy
         )
         if r.status_code == 409:
             # Product already exists -> update
@@ -184,6 +185,7 @@ def register_metadata(
                 "%s/collections/%s/items/%s" % (api_url, stac.collection_id, stac.id),
                 json=stac.to_dict(),
                 auth=(api_user, api_pw),
+                verifiy=verifiy
             )
 
         if r.status_code != 200:
